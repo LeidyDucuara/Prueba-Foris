@@ -1,6 +1,10 @@
-## Problema
+## Prueba Foris
 
-### Descripción
+## Autor ✒️
+
+* **Leidy Marcela Ducuara** - [LeidyDucuara](https://github.com/LeidyDucuara)
+
+### Descripción Problema
 
 Buscamos detectar a los estudiantes que más asisten a clases.
 
@@ -61,3 +65,64 @@ Marco: 142 minutes in 2 days
 David: 104 minutes in 1 day
 Fran: 0 minutes
 ```
+### Solución
+
+Para desarrollar esta solución voy a utilizar python y programación orientada a objetos.
+
+Principalmente se envidencian tres clases   importantes = Los estudiantes, La presencia de dicho estudiante en alguna sala, en determinado momento y un resumen de asistencia general.
+
+<image src="Asistencia_foris\docs\img_class.PNG" alt="Clases">
+
+Como la idea era amplicar un poco la idea y no realizarlo en una simple función cree un modelo tipo servicios donde el entry point recibe el parametro de tipo txt y lo envia a la clase Ap_asistence, esta clase usara los servicios creados para dar solucion a los requerimientos.
+
+Por otro lado tendre las entidades en la carpeta model donde definire la clase, sus atributos y metodos. Para tener persistencia creer una lista para almacenar los objetos de tipo estudiante y otra para almacenar los de tipo presencia, para asistencia cree un atributo de clase de tipo diccionario donde podremos almacenar y actualizar la asistecia de cada estudiante.
+
+En la carpeta services cree la clase abstracta de cada modulo para despues heredar e implementar sus servicios.
+
+<image src="Asistencia_foris\docs\img_componentes.PNG" alt="Componentes">
+
+
+Este principalmente cuenta con dos procesos importantes, lee y registra los datos ingresados y genera un reporte o resumen donde se puede envidenciar la asistencia de los estudiantes a lo largo de la semana.
+
+### Ejecución
+
+Para ejecutar nuestro script debemos estar en la ubicacion donde se almacenen nuestros archivos y usar el siguiente comando
+
+```
+python App.py prueba.txt
+
+```
+
+### Casos de prueba o Validaciones
+
+* Validamos el comando ingresado al comenzar cada linea para verificar que lo soportamos
+
+<image src="Asistencia_foris\docs\prueba4.PNG" alt="Componentes">
+
+* Al registrar un estudiante validamos que no se encuentre ya registrado
+* Validación dia de la semana esta entre 1-7
+
+<image src="Asistencia_foris\docs\prueba2.PNG" alt="Componentes">
+
+* El tiempo registrado debe ser mayor a 5 minutos
+
+<image src="Asistencia_foris\docs\prueba5.PNG" alt="Componentes">
+
+* Validamos que el estudiante identificado en la presencia si se encuentre registrado como estudiante
+
+<image src="Asistencia_foris\docs\prueba3.PNG" alt="Componentes">
+
+* Ordenamos de mayor a menor a los estudiantes de acuerdo a la cantidad de minutos
+
+<image src="Asistencia_foris\docs\prueba1.PNG" alt="Componentes">
+
+
+## Licencia 
+
+Este proyecto fue creado bajo la Licencia (MIT) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+
+
+
+
+
+

@@ -1,15 +1,19 @@
-class Asistence:
+class Asistence(object):
     
-    asistences : dict = {}
+    asistence:dict = {}
     
-    def __init__(self, name:str, total_min:int, cant_days:int):
-        self.name = name
-        self.total_min = total_min
-        self.cant_days = cant_days
-        self.asistences[name] = {'name': name,
-                                 'total_min': total_min,
-                                 'cant_days': cant_days}
+    def __init__(self):
+        self.asistence = {}
         
+    def save_asistence(self,name:str, total_min:int,days: list, cant_days:int)-> None:
+        self.asistence[name] = {'name' : name, 'minutes' : total_min, 'days' : days, 'cant_days' : cant_days}
+        
+    def show_asistences(self) -> dict:
+        return self.asistence
+    
+    def show_asistence(self,name :str) -> dict:
+        return self.asistence[name]
+    
     @property
     def name(self) -> str:
         return self.name

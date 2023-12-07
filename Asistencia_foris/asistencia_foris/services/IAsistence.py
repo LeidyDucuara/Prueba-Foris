@@ -3,24 +3,19 @@ from abc import abstractmethod
 
 class IAsistence(metaclass = ABCMeta):
     
+    '''Abrir un nuevo registro de asistencia para u estudiante recien inscrito'''
     @abstractmethod
     def register_asistence(self):
         pass
     
+    '''Modificar el registro de asistencia si se presenta alguna presencia'''
     @abstractmethod
-    def all_asistences(self):
+    def update_asistence(self):
         pass
     
+    '''Retornar un resumen con la asistencia de todos los estudiantes'''
     @abstractmethod
-    def add_minutes(self):
-        pass
-    
-    @abstractmethod
-    def add_day(self):
-        pass
-    
-    @abstractmethod
-    def is_asistence(self):
+    def summary_asistence(self):
         pass
     
     
